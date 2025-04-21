@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Vocabfood - Online Catering and Food Booking">
+  <meta name="keywords" content="Catering, Tiffin Service, Food Delivery, Bulk Orders, Vocabfood">
+  <meta name="author" content="Vocabfood">
+  <title>Vocabfood | Delicious Food, Delivered Fresh</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <div class="logo">Vocabfood</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#" onclick="showOrderStatus()">Order Status</a></li>
+        <li><a href="#" onclick="toggleCart()">Cart (<span id="cart-count">0</span>)</a></li>
+        <li><a href="#" onclick="toggleAuth()">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Fresh, Delicious, Delivered!</h1>
+    <p>Book tiffins, bulk food, and catering with ease.</p>
+    <button onclick="scrollToMenu()">Explore Menu</button>
+  </section>
+
+  <section class="filters">
+    <button onclick="filterMenu('All')">All</button>
+    <button onclick="filterMenu('Veg')">Veg</button>
+    <button onclick="filterMenu('Non-Veg')">Non-Veg</button>
+    <button onclick="filterMenu('Tiffin')">Tiffin</button>
+    <button onclick="filterMenu('Bulk')">Bulk Order</button>
+  </section>
+
+  <section class="menu" id="menu"></section>
+
+  <footer>
+    <div class="footer-info">
+      <p>Main Office: Pardi Bazar Road, Nagpur</p>
+      <p>Email: vocabsupportfood@gmail.com | vocabfoodpvt@gmail.com</p>
+      <p>Phone: 7028255991</p>
+      <p>Instagram: @vocabfood_z | @ashutoshyadav_z</p>
+    </div>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </div>
+  </footer>
+
+  <!-- Modals -->
+  <div id="auth-modal" class="modal hidden"></div>
+  <div id="cart-modal" class="modal hidden"></div>
+  <div id="status-modal" class="modal hidden"></div>
+  <div id="chat-icon">Chat</div>
+</body>
+</html>
