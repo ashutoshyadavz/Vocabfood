@@ -1,66 +1,342 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Vocabfood - Online Catering and Food Booking">
-  <meta name="keywords" content="Catering, Tiffin Service, Food Delivery, Bulk Orders, Vocabfood">
-  <meta name="author" content="Vocabfood">
-  <title>Vocabfood | Delicious Food, Delivered Fresh</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vocabfood - Premium catering and tiffin service in Nagpur. Order delicious meals, tiffins, and bulk catering online.">
+    <meta name="keywords" content="catering, food, tiffin, online meal, Nagpur, Vocabfood, SwaadSutra">
+    <title>Vocabfood - Delicious Food, Delivered Fresh!</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="logo">Vocabfood</div>
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#" onclick="showOrderStatus()">Order Status</a></li>
-        <li><a href="#" onclick="toggleCart()">Cart (<span id="cart-count">0</span>)</a></li>
-        <li><a href="#" onclick="toggleAuth()">Login</a></li>
-      </ul>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Vocabfood</a>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#menu">Menu</a>
+                <a href="#contact">Contact</a>
+                <a href="#" class="order-status">Order Status</a>
+                <a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a>
+                <button class="btn login-btn">Login</button>
+            </div>
+            <button class="hamburger"><i class="fas fa-bars"></i></button>
+        </div>
     </nav>
-  </header>
 
-  <section class="hero">
-    <h1>Fresh, Delicious, Delivered!</h1>
-    <p>Book tiffins, bulk food, and catering with ease.</p>
-    <button onclick="scrollToMenu()">Explore Menu</button>
-  </section>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Fresh, Delicious, Delivered!</h1>
+            <p>Book tiffins, bulk food, and catering with ease.</p>
+            <button class="btn cta-btn">Explore Menu</button>
+        </div>
+    </section>
 
-  <section class="filters">
-    <button onclick="filterMenu('All')">All</button>
-    <button onclick="filterMenu('Veg')">Veg</button>
-    <button onclick="filterMenu('Non-Veg')">Non-Veg</button>
-    <button onclick="filterMenu('Tiffin')">Tiffin</button>
-    <button onclick="filterMenu('Bulk')">Bulk Order</button>
-  </section>
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title">About Vocabfood</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Vocabfood brings you the finest catering experience in Nagpur. Our mission is to deliver delicious, home-style food with the convenience of modern technology.</p>
+                    <p>Founded in 2023, we've served over 10,000 happy customers with our premium tiffin service and catering solutions.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1559847844-5315695dadae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Chef preparing food">
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section class="menu" id="menu"></section>
+    <!-- Services Section -->
+    <section id="services" class="section services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Daily Tiffin</h3>
+                    <p>Freshly prepared meals delivered to your doorstep every day.</p>
+                    <p class="price">₹70 per tiffin</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Monthly Subscription</h3>
+                    <p>Subscribe for a month and enjoy hassle-free meals.</p>
+                    <p class="price">₹1500/month (no delivery)<br>₹2100/month (with delivery)</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Bulk Catering</h3>
+                    <p>Perfect for events, parties, and corporate functions.</p>
+                    <p class="price">₹150/plate (10% discount on 100+ plates)</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <footer>
-    <div class="footer-info">
-      <p>Main Office: Pardi Bazar Road, Nagpur</p>
-      <p>Email: vocabsupportfood@gmail.com | vocabfoodpvt@gmail.com</p>
-      <p>Phone: 7028255991</p>
-      <p>Instagram: @vocabfood_z | @ashutoshyadav_z</p>
+    <!-- Menu Section -->
+    <section id="menu" class="section menu">
+        <div class="container">
+            <h2 class="section-title">Our Menu</h2>
+            <div class="menu-controls">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Search dishes...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="veg">Veg</button>
+                    <button class="filter-btn" data-filter="non-veg">Non-Veg</button>
+                    <button class="filter-btn" data-filter="tiffin">Tiffin</button>
+                    <button class="filter-btn" data-filter="bulk">Bulk</button>
+                </div>
+            </div>
+            <div class="menu-grid" id="menu-container">
+                <!-- Menu items will be loaded from JSON via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section id="booking" class="section booking">
+        <div class="container">
+            <h2 class="section-title">Place Your Order</h2>
+            <form id="booking-form" class="booking-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="full-name">Full Name</label>
+                        <input type="text" id="full-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="event-type">Event Type</label>
+                        <select id="event-type" required>
+                            <option value="">Select</option>
+                            <option value="daily">Daily Tiffin</option>
+                            <option value="monthly">Monthly Subscription</option>
+                            <option value="event">Special Event</option>
+                            <option value="corporate">Corporate Catering</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Number of Plates/People</label>
+                        <input type="number" id="quantity" min="1" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Time</label>
+                        <input type="time" id="time" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="address">Delivery Address</label>
+                    <textarea id="address" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Add-ons (₹25 each)</label>
+                    <div class="addons">
+                        <label><input type="checkbox" name="addon" value="salad"> Salad</label>
+                        <label><input type="checkbox" name="addon" value="dessert"> Dessert</label>
+                        <label><input type="checkbox" name="addon" value="drink"> Soft Drink</label>
+                    </div>
+                </div>
+                <div class="price-summary">
+                    <h4>Estimated Cost: <span id="estimated-cost">₹0</span></h4>
+                </div>
+                <button type="submit" class="btn submit-btn">Place Order</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Pardi Bazar Road, Nagpur</p>
+                    <p><i class="fas fa-phone"></i> 7028255991</p>
+                    <p><i class="fas fa-envelope"></i> vocabsupportfood@gmail.com</p>
+                    <p><i class="fas fa-envelope"></i> vocabfoodpvt@gmail.com</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i> @vocabfood_z</a>
+                        <a href="#"><i class="fab fa-instagram"></i> @ashutoshyadav_z</a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Your Phone">
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="4" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="#">Vocabfood</a>
+                    <p>Delicious Food, Delivered Fresh!</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Vocabfood. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login/Signup Modal -->
+    <div class="modal" id="auth-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="auth-tabs">
+                <button class="tab-btn active" data-tab="login">Login</button>
+                <button class="tab-btn" data-tab="signup">Sign Up</button>
+            </div>
+            <div class="auth-forms">
+                <form id="login-form" class="auth-form active">
+                    <div class="form-group">
+                        <label for="login-mobile">Mobile Number</label>
+                        <input type="tel" id="login-mobile" placeholder="10-digit number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" placeholder="Min 8 characters" required>
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                </form>
+                <form id="signup-form" class="auth-form">
+                    <div class="form-group">
+                        <label for="signup-mobile">Mobile Number</label>
+                        <input type="tel" id="signup-mobile" placeholder="10-digit number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password">Password</label>
+                        <input type="password" id="signup-password" placeholder="Min 8 characters" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="user-type">I am a</label>
+                        <select id="user-type" required>
+                            <option value="">Select</option>
+                            <option value="customer">Customer</option>
+                            <option value="partner">Partner</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn">Sign Up</button>
+                </form>
+            </div>
+        </div>
     </div>
-    <div class="footer-links">
-      <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
-    </div>
-  </footer>
 
-  <!-- Modals -->
-  <div id="auth-modal" class="modal hidden"></div>
-  <div id="cart-modal" class="modal hidden"></div>
-  <div id="status-modal" class="modal hidden"></div>
-  <div id="chat-icon">Chat</div>
+    <!-- Cart Modal -->
+    <div class="modal" id="cart-modal">
+        <div class="modal-content cart-content">
+            <span class="close-modal">&times;</span>
+            <h3>Your Cart</h3>
+            <div class="cart-items" id="cart-items">
+                <!-- Cart items will be added here via JavaScript -->
+                <p class="empty-cart">Your cart is empty</p>
+            </div>
+            <div class="cart-total">
+                <h4>Total: <span id="cart-total">₹0</span></h4>
+            </div>
+            <button class="btn checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Live Chat Button -->
+    <div class="live-chat">
+        <button class="chat-btn"><i class="fas fa-comments"></i></button>
+    </div>
+
+    <!-- Chat Modal -->
+    <div class="modal" id="chat-modal">
+        <div class="modal-content chat-content">
+            <span class="close-modal">&times;</span>
+            <h3>Chat with Support</h3>
+            <div class="chat-messages">
+                <p>Welcome to Vocabfood support! How can we help you today?</p>
+                <p class="note">Note: This is a demo chat interface. Actual chat functionality would be implemented in a production environment.</p>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type your message...">
+                <button class="btn send-btn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Status Modal -->
+    <div class="modal" id="status-modal">
+        <div class="modal-content status-content">
+            <span class="close-modal">&times;</span>
+            <h3>Check Order Status</h3>
+            <form id="status-form">
+                <div class="form-group">
+                    <label for="order-id">Enter Order ID</label>
+                    <input type="text" id="order-id" placeholder="e.g. VOCAB12345" required>
+                </div>
+                <button type="submit" class="btn">Check Status</button>
+            </form>
+            <div class="status-result" id="status-result">
+                <!-- Order status will be displayed here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
