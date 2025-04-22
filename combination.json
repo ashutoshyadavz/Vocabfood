@@ -1,0 +1,259 @@
+[
+    {
+        "id": "punjabi-thali",
+        "name": "Punjabi Thali",
+        "description": "A hearty meal from the land of five rivers",
+        "category": "veg",
+        "dishes": [
+            "Sarson ka Saag with Makki di Roti",
+            "Dal Makhani",
+            "Paneer Butter Masala",
+            "Jeera Rice",
+            "Boondi Raita",
+            "Gulab Jamun"
+        ],
+        "price": 150,
+        "image": "https://images.unsplash.com/photo-1631898030810-8a0a2a743244?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+    },
+    {
+        "id": "gujarati-thali",
+        "name": "Gujarati Thali",
+        "description": "Sweet and savory flavors of Gujarat",
+        "category": "veg",
+        "dishes": [
+            "Dhokla",
+            "Khandvi",
+            "Gujarati Kadhi",
+            "Undhiyu",
+            "Rotli",
+            "Shrikhand"
+        ],
+        "price": 150,
+        "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+    },
+    {
+        "id": "bengali-thali",
+        "name": "Bengali Thali",
+        "description": "Traditional flavors from West Bengal",
+        "category": "non-veg",
+        "dishes": [
+            "Macher Jhol (Fish Curry)",
+            "Shorshe Ilish",
+            "Cholar Dal",
+            "Luchi",
+            "Aloo Posto",
+            "Rasgulla"
+        ],
+        "price": 150,
+        "image": "https://images.unsplash.com/photo-1633945274309-2c16cf9687a4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+    },
+    {
+        "id": "south-indian-thali",
+        "name": "South Indian Thali",
+        "description": "Authentic flavors from South India",
+        "category": "veg",
+        "dishes": [
+            "Sambar",
+            "Rasam",
+            "Vegetable Kootu",
+            "Poricha Kootu",
+            "Steamed Rice",
+            "Dosa",
+            "Payasam"
+        ],
+        "price": 150,
+        "image": "https://images.unsplash.com/photo-1631898030810-8a0a2a743244?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+    },
+    {
+        "id": "rajasthani-thali",
+        "name": "Rajasthani Thali",
+        "description": "Royal cuisine from the land of kings",
+        "category": "veg",
+        "dishes": [
+            "Dal Baati Churma",
+            "Gatte ki Sabzi",
+            "Ker Sangri",
+            "Bajra Roti",
+            "Mohan Maas",
+            "Ghewar"
+        ],
+        "price": 150,
+        "image": "https://images.unsplash.com/photo-1633945274309-2c16cf9687a4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+    },
+    {
+        "id": "maharashtrian-thali",
+        "name": "Maharashtrian Thali",
+        "description": "Flavors from the western coast",
+        "category": "veg",
+        "dishes": [
+            "Puran Poli",
+            "Varan Bhaat",
+            "Bharli Vangi",
+            "Pithla Bhakri",
+            "Kothimbir Vadi",
+            "Shrikhand"
+        ],
+        "price": 150,
+        "image": "https://images.unsplash.com/photo-1631898030810-8a0a2a743244?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+    },
+    {
+        "id": "bihari-thali",
+        "name": "Bihari Thali",
+        "description": "Traditional cuisine from Bihar",
+        "category": "veg",
+        "dishes": [
+            "Litti Chokha",
+            "Sattu Paratha",
+            "Chana Ghugni",
+            "Dal Pitha",
+            "Thekua",
+            "Khaja"
+        ],
+        "price": 150,
+        "image": "https://images.unsplash.com/photo-1633945274309-2c16cf9687a4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+    },
+    {
+        "id": "assamese-thali",
+        "name": "Assamese Thali",
+        "description": "Exotic flavors from Northeast India",
+        "category": "non-veg",
+        "dishes": [
+            "Masor Tenga",
+            "Aloo Pitika",
+            "Khar",
+            "Pork with Bamboo Shoot",
+            "Xutuli Pitha",
+            "Komolar Kheer"
+        ],
+        "price": 150,
+        "image": "https://images.unsplash.com/photo-1631898030810-8a0a2a743244?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+    },
+    {
+        "id": "goan-thali",
+        "name": "Goan Thali",
+        "description": "Coastal flavors from Goa",
+        "category": "non-veg",
+        "dishes": [
+            "Fish Curry Rice",
+            "Chicken Xacuti",
+            "Pork Vindaloo",
+            "Sannas",
+            "Bebinca",
+            "Dodol"
+        ],
+        "price": 150,
+        "image": "https://images.unsplash.com/photo-1633945274309-2c16cf9687a4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+    },
+    {
+        "id": "kashmiri-thali",
+        "name": "Kashmiri Thali",
+        "description": "Royal cuisine from Kashmir",
+        "category": "non-veg",
+        "dishes": [
+            "Rogan Josh",
+            "Gushtaba",
+            "Dum Aloo",
+            "Yakhni",
+            "Kashmiri Pulao",
+            "Phirni"
+        ],
+        "price": 150,
+        "image": "https://images.unsplash.com/photo-1631898030810-8a0a2a743244?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+    },
+    {
+        "id": "kerala-thali",
+        "name": "Kerala Thali",
+        "description": "Flavors from God's Own Country",
+        "category": "non-veg",
+        "dishes": [
+            "Kerala Fish Curry",
+            "Avial",
+            "Sambar",
+            "Appam",
+            "Puttu",
+            "Payasam"
+        ],
+        "price": 150,
+        "image": "https://images.unsplash.com/photo-1633945274309-2c16cf9687a4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+    },
+    {
+        "id": "hyderabadi-thali",
+        "name": "Hyderabadi Thali",
+        "description": "Royal Nizami cuisine",
+        "category": "non-veg",
+        "dishes": [
+            "Hyderabadi Biryani",
+            "Haleem",
+            "Mirchi ka Salan",
+            "Bagara Baingan",
+            "Double ka Meetha",
+            "Qubani ka Meetha"
+        ],
+        "price": 150,
+        "image": "https://images.unsplash.com/photo-1631898030810-8a0a2a743244?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+    },
+    {
+        "id": "chettinad-thali",
+        "name": "Chettinad Thali",
+        "description": "Spicy flavors from Tamil Nadu",
+        "category": "non-veg",
+        "dishes": [
+            "Chettinad Chicken",
+            "Meen Kuzhambu",
+            "Vatha Kuzhambu",
+            "Idiyappam",
+            "Paniyaram",
+            "Paal Payasam"
+        ],
+        "price": 150,
+        "image": "https://images.unsplash.com/photo-1633945274309-2c16cf9687a4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+    },
+    {
+        "id": "awadhi-thali",
+        "name": "Awadhi Thali",
+        "description": "Royal cuisine from Lucknow",
+        "category": "non-veg",
+        "dishes": [
+            "Galouti Kebab",
+            "Murg Musallam",
+            "Nalli Nihari",
+            "Sheermal",
+            "Zarda",
+            "Shahi Tukda"
+        ],
+        "price": 150,
+        "image": "https://images.unsplash.com/photo-1631898030810-8a0a2a743244?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+    },
+    {
+        "id": "festive-special",
+        "name": "Festive Special Thali",
+        "description": "Celebration special with all favorites",
+        "category": "special",
+        "dishes": [
+            "Paneer Tikka",
+            "Butter Chicken",
+            "Dal Tadka",
+            "Jeera Rice",
+            "Naan",
+            "Gajar ka Halwa"
+        ],
+        "price": 150,
+        "image": "https://images.unsplash.com/photo-1633945274309-2c16cf9687a4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+    },
+    {
+        "id": "diabetic-special",
+        "name": "Diabetic Special Thali",
+        "description": "Healthy options for diabetic diet",
+        "category": "special",
+        "dishes": [
+            "Methi Thepla",
+            "Lauki Chana Dal",
+            "Jowar Roti",
+            "Brown Rice",
+            "Cucumber Raita",
+            "Sugar-free Kheer"
+        ],
+        "price": 150,
+        "image": "https://images.unsplash.com/photo-1631898030810-8a0a2a743244?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+    }
+]
