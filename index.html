@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Vocabfood – Smart Catering & Bulk Food Service</title>
     <meta name="description" content="Affordable Indian catering platform for events and daily meals.">
     <meta name="keywords" content="catering, food delivery, Indian thali, bulk food orders, Nagpur">
@@ -11,6 +11,44 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="scripts/main.js" as="script">
+    <!-- JSON-LD Schema for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Vocabfood",
+      "image": "https://ashutoshyadavz.github.io/vocabfood/images/logo.jpg",
+      "@id": "",
+      "url": "https://ashutoshyadavz.github.io/vocabfood/",
+      "telephone": "+917028255991",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Pardi Bazar Road",
+        "addressLocality": "Nagpur",
+        "addressRegion": "MH",
+        "postalCode": "440035",
+        "addressCountry": "IN"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "08:00",
+        "closes": "22:00"
+      },
+      "sameAs": [
+        "https://instagram.com/vocabfood_z"
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- Header/Navbar -->
@@ -30,14 +68,14 @@
                     <i class="fas fa-shopping-cart"></i>
                     <span class="cart-count">0</span>
                 </a>
-                <a href="https://instagram.com/vocabfood_z" class="social-icon" target="_blank">
+                <a href="https://instagram.com/vocabfood_z" class="social-icon" target="_blank" aria-label="Instagram">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="https://wa.me/7028255991" class="social-icon" target="_blank">
+                <a href="https://wa.me/7028255991" class="social-icon" target="_blank" aria-label="WhatsApp">
                     <i class="fab fa-whatsapp"></i>
                 </a>
                 <button class="btn btn-login" id="login-btn">Login</button>
-                <button class="nav-toggle" id="nav-toggle">
+                <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
@@ -85,7 +123,7 @@
             <h2 class="section-title">Our Thali Menu</h2>
             <div class="menu-controls">
                 <div class="search-box">
-                    <input type="text" id="menu-search" placeholder="Search thalis...">
+                    <input type="text" id="menu-search" placeholder="Search thalis..." aria-label="Search menu">
                     <i class="fas fa-search"></i>
                 </div>
                 <div class="category-filters">
@@ -96,7 +134,11 @@
                 </div>
             </div>
             <div class="menu-grid" id="menu-grid">
-                <!-- Menu items will be dynamically loaded here -->
+                <!-- Menu items will be dynamically loaded from JSON -->
+                <div class="menu-loading">
+                    <div class="loading-spinner"></div>
+                    <p>Loading delicious menu items...</p>
+                </div>
             </div>
         </div>
     </section>
@@ -113,7 +155,7 @@
                     </div>
                     <div class="form-group">
                         <label for="mobile">Mobile Number</label>
-                        <input type="tel" id="mobile" required>
+                        <input type="tel" id="mobile" pattern="[0-9]{10}" required>
                     </div>
                 </div>
                 <div class="form-row">
@@ -187,10 +229,10 @@
                         <a href="mailto:vocabfoodpvt@gmail.com">vocabfoodpvt@gmail.com</a>
                     </div>
                     <div class="social-links">
-                        <a href="https://instagram.com/vocabfood_z" target="_blank">
+                        <a href="https://instagram.com/vocabfood_z" target="_blank" aria-label="Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://instagram.com/ashutoshyadav_z" target="_blank">
+                        <a href="https://instagram.com/ashutoshyadav_z" target="_blank" aria-label="Personal Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
                     </div>
@@ -234,13 +276,13 @@
                 <div class="footer-col">
                     <h3>Legal</h3>
                     <ul>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#" id="privacy-link">Privacy Policy</a></li>
+                        <li><a href="#" id="terms-link">Terms of Service</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 Vocabfood Pvt. Ltd. All rights reserved.</p>
+                <p>&copy; <span id="current-year"></span> Vocabfood Pvt. Ltd. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -250,11 +292,10 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h3>Your Order Cart</h3>
-                <button class="modal-close">&times;</button>
+                <button class="modal-close" aria-label="Close cart">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="cart-items" id="cart-items">
-                    <!-- Cart items will be loaded here -->
                     <div class="empty-cart">
                         <i class="fas fa-shopping-cart"></i>
                         <p>Your cart is empty</p>
@@ -284,7 +325,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h3>Login / Sign Up</h3>
-                <button class="modal-close">&times;</button>
+                <button class="modal-close" aria-label="Close login">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="auth-tabs">
@@ -294,7 +335,7 @@
                 <form id="login-form" class="auth-form active">
                     <div class="form-group">
                         <label for="login-mobile">Mobile Number</label>
-                        <input type="tel" id="login-mobile" required>
+                        <input type="tel" id="login-mobile" pattern="[0-9]{10}" required>
                     </div>
                     <div class="form-group">
                         <label for="login-password">Password</label>
@@ -309,7 +350,7 @@
                     </div>
                     <div class="form-group">
                         <label for="signup-mobile">Mobile Number</label>
-                        <input type="tel" id="signup-mobile" required>
+                        <input type="tel" id="signup-mobile" pattern="[0-9]{10}" required>
                     </div>
                     <div class="form-group">
                         <label for="signup-password">Password (min 8 chars)</label>
@@ -328,125 +369,8 @@
         </div>
     </div>
 
-    <!-- Dashboard Modal -->
-    <div class="modal" id="dashboard-modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 id="dashboard-title">Customer Dashboard</h3>
-                <button class="modal-close">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div id="customer-dashboard">
-                    <div class="welcome-message">
-                        <h4>Welcome back, <span id="user-name">User</span>!</h4>
-                        <p>Manage your orders and reorder your favorite thalis.</p>
-                    </div>
-                    <div class="recent-orders">
-                        <h5>Your Recent Orders</h5>
-                        <div class="orders-list">
-                            <div class="order-item">
-                                <div class="order-info">
-                                    <span class="order-id">Order #VF12345</span>
-                                    <span class="order-date">15 July 2023</span>
-                                </div>
-                                <div class="order-details">
-                                    <span>Punjabi Thali (x2), Gujarati Thali (x1)</span>
-                                    <span class="order-status delivered">Delivered</span>
-                                </div>
-                                <button class="btn btn-sm btn-outline">Reorder</button>
-                            </div>
-                            <div class="order-item">
-                                <div class="order-info">
-                                    <span class="order-id">Order #VF12344</span>
-                                    <span class="order-date">10 July 2023</span>
-                                </div>
-                                <div class="order-details">
-                                    <span>South Indian Thali (x5)</span>
-                                    <span class="order-status delivered">Delivered</span>
-                                </div>
-                                <button class="btn btn-sm btn-outline">Reorder</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="dashboard-actions">
-                        <button class="btn btn-primary" id="new-order-btn">Place New Order</button>
-                    </div>
-                </div>
-                <div id="partner-dashboard" style="display: none;">
-                    <div class="welcome-message">
-                        <h4>Welcome, Partner!</h4>
-                        <p>Manage your catering services and orders here.</p>
-                    </div>
-                    <div class="partner-stats">
-                        <div class="stat-card">
-                            <span class="stat-number">12</span>
-                            <span class="stat-label">Active Orders</span>
-                        </div>
-                        <div class="stat-card">
-                            <span class="stat-number">₹24,500</span>
-                            <span class="stat-label">This Month</span>
-                        </div>
-                    </div>
-                    <div class="partner-actions">
-                        <button class="btn btn-outline">View All Orders</button>
-                        <button class="btn btn-primary">Add New Menu</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Order Tracking Modal -->
-    <div class="modal" id="tracking-modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Track Your Order</h3>
-                <button class="modal-close">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <label for="order-id">Enter Order ID</label>
-                    <input type="text" id="order-id" placeholder="e.g. VF12345">
-                </div>
-                <button class="btn btn-primary btn-block" id="track-order-btn">Track Order</button>
-                <div class="tracking-result" id="tracking-result" style="display: none;">
-                    <div class="timeline">
-                        <div class="timeline-item active">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-content">
-                                <p>Order Placed</p>
-                                <span>Today, 10:30 AM</span>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-content">
-                                <p>Preparing</p>
-                                <span>Estimated: 11:30 AM</span>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-content">
-                                <p>On the way</p>
-                                <span>Estimated: 12:15 PM</span>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-content">
-                                <p>Delivered</p>
-                                <span>Estimated: 12:45 PM</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Support Chat Button -->
-    <div class="chat-btn" id="chat-btn">
+    <!-- Chat Support Button -->
+    <div class="chat-btn" id="chat-btn" aria-label="Chat support">
         <i class="fas fa-comment-dots"></i>
     </div>
 
@@ -455,7 +379,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h3>Chat with Support</h3>
-                <button class="modal-close">&times;</button>
+                <button class="modal-close" aria-label="Close chat">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="chat-message">
@@ -473,17 +397,19 @@
         </div>
     </div>
 
-    <!-- Success Notification -->
+    <!-- Notification -->
     <div class="notification" id="notification">
         <div class="notification-content">
             <span class="notification-message" id="notification-message"></span>
         </div>
     </div>
 
+    <!-- Single JavaScript File -->
     <script src="scripts/main.js"></script>
-    <script src="scripts/auth.js"></script>
-    <script src="scripts/cart.js"></script>
-    <script src="scripts/booking.js"></script>
-    <script src="scripts/search.js"></script>
+    
+    <!-- Initialize current year -->
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
